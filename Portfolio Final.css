@@ -1,0 +1,464 @@
+/* =========================================
+   1. ESTRUTURA BASE E CENTRALIZAÇÃO ABSOLUTA
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    background-color: #9dbfff;
+    position: relative;
+}
+
+body.page-content {
+    align-items: center;
+    overflow-y: auto;
+    padding: 30px 0;
+}
+
+/* Fundo Curvado Universal */
+.background-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+}
+
+.blue-light {
+    flex: 1;
+    background-color: #9dbfff;
+}
+
+.blue-dark-shape {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%;
+    height: 100%;
+}
+
+.blue-dark-shape svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================================
+   2. NAVBAR E CONTAINERS (ÁREA CINZA)
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1d9cf1;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 900;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #4dc2d8;
+}
+
+.main-card,
+.container {
+    width: 85%;
+    max-width: 1100px;
+    background-color: rgba(207, 207, 207, 0.95);
+    border-radius: 60px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.main-card {
+    height: 550px;
+}
+
+/* =========================================
+   3. CONTEÚDO DA PÁGINA INICIAL (INDEX)
+   ========================================= */
+.logo-placeholder {
+    background-color: #4dc2d8;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #555;
+    display: inline-block;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.info-side {
+    flex: 1;
+}
+
+.title {
+    font-size: 60px;
+    font-weight: 900;
+    color: #3d6e70;
+    margin-bottom: 35px;
+}
+
+.description-text {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    max-width: 400px;
+}
+
+.photo-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-box {
+    width: 350px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.photo-box img {
+    width: 110%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* =========================================
+   4. COMPONENTES DE SUBPÁGINAS
+   ========================================= */
+.page-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #3d6e70;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.bio-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    border-top: 8px solid #4dc2d8;
+    text-align: center;
+    /* Centraliza conteúdo e botão no card da bio */
+}
+
+.bio-card h3 {
+    color: #1d4df1;
+    margin-bottom: 15px;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.activity-card {
+    text-decoration: none;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+}
+
+.yellow {
+    background-color: #f1c40f;
+}
+
+.orange {
+    background-color: #e67e22;
+}
+
+.pink {
+    background-color: #e91e63;
+}
+
+.cyan {
+    background-color: #00bcd4;
+}
+
+.card-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.project-card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background: white;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+/* =========================================
+   5. SISTEMA DE MODAL (POP-UP) - NOVO
+   ========================================= */
+.modal-overlay {
+    display: none;
+    /* Escondido por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    /* Fundo escurecido */
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    border-radius: 40px;
+    padding: 40px;
+    position: relative;
+    overflow-y: auto;
+    /* Scroll interno para textos longos */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #1d4df1;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-text {
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+}
+
+/* =========================================
+   6. BOTÕES E RESPONSIVIDADE
+   ========================================= */
+.footer-nav {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn,
+.btn-project {
+    background-color: #2b57f2;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 18px;
+    font-weight: 700;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover,
+.btn-project:hover {
+    background-color: #1a3dbb;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(43, 87, 242, 0.4);
+}
+
+@media (max-width: 1000px) {
+    body {
+        align-items: flex-start;
+        padding-top: 80px;
+    }
+
+    .main-card,
+    .container {
+        width: 95%;
+        height: auto;
+        padding: 30px;
+        border-radius: 30px;
+    }
+
+    .content-container,
+    .project-card,
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+        position: static;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .photo-box {
+        width: 90%;
+        max-width: 220px;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+}
+
+/* =========================================
+   7. COMANDOS PARA ACESSO MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Ajusta o corpo para não prender o conteúdo */
+    body.page-content {
+        padding: 20px 0;
+        align-items: flex-start;
+    }
+
+    /* Navbar: Empilha os links para caberem no ecrã */
+    .navbar {
+        padding: 10px;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbar nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .navbar nav a {
+        margin: 0 5px;
+        font-size: 11px;
+    }
+
+    /* Containers: Ganham largura total (95%) */
+    .main-card,
+    .container {
+        width: 95%;
+        height: auto;
+        /* Deixa o card crescer conforme o texto */
+        padding: 20px;
+        border-radius: 20px;
+        margin: 60px auto 20px;
+        /* Espaço para a navbar fixa */
+    }
+
+    /* Página Inicial: Coloca foto e texto um por baixo do outro */
+    .content-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .photo-box {
+        width: 100%;
+        max-width: 250px;
+        margin: 20px auto;
+    }
+
+    /* Botões: Ficam grandes e fáceis de clicar com o dedo */
+    .footer-nav {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Grids (Atividades e Biografia): Uma coluna única */
+    .card-grid,
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Modais: Ajusta o tamanho para o ecrã do telemóvel */
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        border-radius: 15px;
+    }
+}
