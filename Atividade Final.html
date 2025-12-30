@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VILA TOLABIM | Atividades</title>
+    <link rel="stylesheet" href="Portfolio Final.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .card-inner { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 10px; margin-bottom: 10px; background: #fff; }
+        .card-inner img, .card-inner video { width: 100%; height: 100%; object-fit: cover; }
+        .gray-card { background: #e7e7e7; padding: 10px; border-radius: 10px; text-align: center; cursor: pointer; transition: transform 0.2s; }
+        .gray-card:hover { transform: scale(1.00); }
+        .gray-card p { font-weight: bold; color: #333; margin-top: 3px; }
+    </style>
+</head>
+<body class="page-content">
+    <div class="background-wrapper">
+        <div class="blue-light"></div>
+        <div class="blue-dark-shape">
+            <svg viewBox="0 0 500 800" preserveAspectRatio="none"><path d="M500,0 L500,800 L150,800 C300,800 200,0 450,0 Z" fill="#1d4df1"></path></svg>
+        </div>
+    </div>
+    <header class="navbar">
+        <a href="Portfolio Final.html" class="logo">
+            <img src="Logo da ULusófona.png" alt="ULusófona" style="height: 60px; width: auto; display: block;">
+        </a>
+        <nav>
+            <a href="Portfolio Final.html">Página Inicial</a>
+            <a href="Biografia Final.html">Biografia</a>
+            <a href="Projeto Final.html">Projetos</a>
+        </nav>
+    </header>
+    <main class="container">
+        <h1 class="page-title">Atividades Acadêmicas</h1>
+        <div class="activities-grid">
+            <div class="activity-card yellow" onclick="abrirModal('modal-web')"><div class="card-icon">🌐</div><h3>Aplicações Web</h3><br><span class="view-more">Ver Trabalhos →</span></div>
+            <div class="activity-card orange" onclick="abrirModal('modal-imagem')"><div class="card-icon">🎨</div><h3>Imagem Digital</h3><br><span class="view-more">Ver Trabalhos →</span></div>
+            <div class="activity-card pink" onclick="abrirModal('modal-meios')"><div class="card-icon">📢</div><h3>Comunicação</h3><br><span class="view-more">Ver Trabalhos →</span></div>
+            <div class="activity-card cyan" onclick="abrirModal('modal-foto')"><div class="card-icon">📷</div><h3>Fotografia</h3><br><span class="view-more">Ver Trabalhos →</span></div>
+        </div>
+    </main>
+    <div id="modal-web" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal('modal-web')">&times;</span>
+            <h2 class="page-title">Aplicações Web</h2>
+            <div class="modal-text">
+                <p>Aqui está uma pequena lista de códigos em HTML que pode baixar e visualizar no computador.</p><br>
+                <hr style="border: 0; border-top: 1px solid #ccc; margin-bottom: 20px;"><p><strong>Recursos para Download:</strong></p>
+                <div style="display: grid; gap: 15px; margin-top: 15px;">
+                    <div class="gray-card"><p>Portfólio Fotográfico</p><a href="Portfolio - Atividade.zip" download class="btn-project">📥 Download</a></div>
+                    <div class="gray-card"><p>Site Publicitário</p><a href="Site Publicitário - Atividade.zip" download class="btn-project">📥 Download</a></div>
+                    <div class="gray-card"><p>Site Pessoal</p><a href="Site Pessoal - Atividade.zip" download class="btn-project">📥 Download</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-imagem" class="modal-overlay">
+        <div class="modal-content" style="max-width: 900px;">
+            <span class="close-btn" onclick="fecharModal('modal-imagem')">&times;</span>
+            <h2 class="page-title">Imagem Digital</h2>
+            <div class="modal-text">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+                    <div class="gray-card" onclick="expandirImagem('Cena de Filme.jpg', 'Cena de Filme')"><div class="card-inner"><img src="Cena de Filme.jpg"></div><p>Cena de Filme</p></div>
+                    <div class="gray-card" onclick="expandirImagem('Tarefa final.png', 'Ilustração do Curso')"><div class="card-inner"><img src="Tarefa final.png"></div><p>Ilustração do Curso</p></div>
+                    <div class="gray-card" onclick="expandirImagem('Homer Simpson.png', 'Homer Simpson')"><div class="card-inner"><img src="Homer Simpson.png"></div><p>Homer Simpson</p></div>
+                    <div class="gray-card" onclick="expandirImagem('Controle de XBOX.png', 'Controle de XBOX')"><div class="card-inner"><img src="Controle de XBOX.png"></div><p>Controle de XBOX</p></div>
+                    <div class="gray-card" onclick="expandirImagem('Jogo das 7 Diferenças.jpg', 'Jogo das 7 Diferenças')"><div class="card-inner"><img src="Jogo das 7 Diferenças.jpg"></div><p>Jogo das 7 Diferenças</p></div>
+                    <div class="gray-card" style="background: #fff9db; border: 2px solid #ffec99;" onclick="abrirModal('modal-gold')"><div style="font-size: 40px; margin-bottom: 10px;">⚡</div><p>Projeto Gold Energy</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-gold" class="modal-overlay">
+        <div class="modal-content" style="max-width: 850px;">
+            <span class="close-btn" onclick="fecharModal('modal-gold')">&times;</span>
+            <h2 class="page-title">Projeto Gold Energy</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="gray-card" onclick="expandirImagem('Gold Energy.jpg', 'Versão Institucional')"><div class="card-inner" style="height: 280px;"><img src="Gold Energy.jpg"></div><p>Versão Institucional</p></div>
+                <div class="gray-card" onclick="expandirImagem('Gold Energy (Versão - Stranger Things).jpg', 'Versão Stranger Things')"><div class="card-inner" style="height: 280px;"><img src="Gold Energy (Versão - Stranger Things).jpg"></div><p>Versão Stranger Things</p></div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-meios" class="modal-overlay">
+        <div class="modal-content" style="max-width: 900px;">
+            <span class="close-btn" onclick="fecharModal('modal-meios')">&times;</span>
+            <h2 class="page-title">Comunicação</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+                <div class="gray-card" onclick="abrirLeitor('Lithos e o Chamado da Caverna.pdf', 'Lithos e o Chamado da Caverna')"><div class="card-inner">📄</div><p>Lithos e o Chamado da Caverna</p></div>
+                <div class="gray-card" onclick="abrirLeitor('História de Matrix.pdf', 'Uma História Matrix')"><div class="card-inner"><img src="Matrix Imagem.jpg"></div><p>Uma História Matrix</p></div>
+                <div class="gray-card" onclick="abrirLeitor('The Light That Won\'t Go.mp4', 'The Light That Won\'t Go')"><div class="card-inner"><video src="The Light That Won't Go.mp4" muted></video></div><p>The Light That Won't Go</p></div>
+                <div class="gray-card" onclick="abrirLeitor('Lost Highway (Paródia).mp4', 'Lost Highway (Paródia)')"><div class="card-inner"><video src="Lost Highway (Paródia).mp4" muted></video></div><p>Lost Highway (Paródia)</p></div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-foto" class="modal-overlay">
+        <div class="modal-content" style="max-width: 900px;">
+            <span class="close-btn" onclick="fecharModal('modal-foto')">&times;</span>
+            <h2 class="page-title">Fotografia</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                <div class="gray-card" onclick="abrirLeitor('Relatório de Práticas Fotograficas.pdf', 'Práticas Fotográficas')"><div class="card-inner">📷</div><p>Práticas Fotográficas</p></div>
+                <div class="gray-card" onclick="abrirLeitor('Relatório de Teoria da Fotografia.pdf', 'Teoria da Fotografia')"><div class="card-inner">📚</div><p>Teoria da Fotografia</p></div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-leitor" class="modal-overlay" style="z-index: 8000;">
+        <div class="modal-content" style="max-width: 95%; height: 90vh; padding: 15px;">
+            <span class="close-btn" onclick="fecharModal('modal-leitor')">&times;</span>
+            <h2 id="titulo-leitor" class="page-title" style="font-size: 1.5rem; margin-bottom: 10px;"></h2>
+            <div id="container-leitor" style="width: 100%; height: calc(100% - 60px);"></div>
+        </div>
+    </div>
+    <div id="lightbox-zoom" class="modal-overlay" style="background: rgba(0,0,0,0.9); z-index: 9000; display: none;" onclick="fecharLightbox()">
+        <span class="close-btn" style="color: white; top: 20px; right: 30px; font-size: 50px;">&times;</span>
+        <div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <img id="img-ampliada" src="" style="max-width: 90%; max-height: 80vh; border-radius: 10px; border: 3px solid white;">
+            <h3 id="legenda-ampliada" style="color: white; margin-top: 20px;"></h3>
+        </div>
+    </div>
+    <script>
+        const abrirModal = id => { document.getElementById(id).style.display = "flex"; document.body.style.overflow = "hidden"; };
+        const fecharModal = id => { 
+            document.getElementById(id).style.display = "none";
+            if (id === 'modal-leitor') document.getElementById('container-leitor').innerHTML = "";
+            if (!document.querySelector('.modal-overlay[style*="flex"]')) document.body.style.overflow = "auto";
+        };
+        const expandirImagem = (src, title) => {
+            document.getElementById('img-ampliada').src = src;
+            document.getElementById('legenda-ampliada').innerText = title;
+            document.getElementById('lightbox-zoom').style.display = "flex";
+            document.body.style.overflow = "hidden";
+        };
+        const abrirLeitor = (src, title) => {
+            const container = document.getElementById('container-leitor');
+            document.getElementById('titulo-leitor').innerText = title;
+            container.innerHTML = src.toLowerCase().endsWith('.pdf') 
+                ? `<iframe src="${src}" style="width:100%;height:100%;border:none;border-radius:10px;"></iframe>`
+                : `<video src="${src}" controls autoplay style="width:100%;height:100%;border-radius:10px;background:#000;"></video>`;
+            abrirModal('modal-leitor');
+        };
+        const fecharLightbox = () => { document.getElementById('lightbox-zoom').style.display = "none"; document.body.style.overflow = "auto"; };
+        window.onclick = e => { if (e.target.classList.contains('modal-overlay')) fecharModal(e.target.id); };
+    </script>
+</body>
+</html>
